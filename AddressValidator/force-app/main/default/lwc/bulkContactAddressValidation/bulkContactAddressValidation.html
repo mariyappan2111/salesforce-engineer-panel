@@ -1,0 +1,81 @@
+<template>
+    <lightning-card title="Validate Address" icon-name="standard:task2">
+        <div class="slds-var-m-around_medium">
+            <!-- Action Bar -->
+            <div class="slds-grid slds-grid_align-spread slds-var-m-bottom_medium">
+                <div class="slds-col">
+                    <lightning-input 
+                        type="checkbox" 
+                        label="Select All" 
+                        onchange={handleSelectAll}>
+                    </lightning-input>
+                </div>
+                <div class="slds-col">
+                    <lightning-button 
+                        variant="brand" 
+                        label="Validate Address" 
+                        onclick={handleValidate}
+                        disabled={isValidateDisabled}>
+                    </lightning-button>
+                </div>
+            </div>
+
+            <!-- Contact Cards Grid -->
+            <div class="slds-grid slds-wrap slds-gutters">
+                <template for:each={contactList} for:item="contact">
+                    <div key={contact.Id} class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3">
+                        <lightning-card title={contact.Name} icon-name="standard:contact">
+                            <div class="slds-var-p-horizontal_medium slds-var-p-bottom_medium">
+                                <lightning-input 
+                                    type="checkbox" 
+                                    data-id="checkbox" 
+                                    onchange={handleSelect} 
+                                    value={contact.Id}
+                                    checked={contact.selected}>
+                                </lightning-input>
+                                <div class="slds-var-m-top_small">
+                                    <div class="slds-text-body_regular">
+                                        <p><strong>Street:</strong> {contact.MailingStreet}</p>
+                                        <p><strong>City:</strong> {contact.MailingCity}</p>
+                                        <p><strong>State:</strong> {contact.MailingState}</p>
+                                        <p><strong>Postal Code:</strong> {contact.MailingPostalCode}</p>
+                                        <p><strong>Country:</strong> {contact.MailingCountry}</p>
+                                        <p><strong>Address Valid:</strong> 
+                                            <lightning-badge 
+                                                label={contact.AddressValid__c} 
+                                                class={contact.badgeClass}>
+                                            </lightning-badge>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </lightning-card>
+                    </div>
+                </template>
+            </div>
+            <!-- Pagination -->
+             {showPagination}
+            <template lwc:if={showPagination}>
+                <div class="slds-var-m-top_medium">
+                    <div class="slds-grid slds-grid_align-center">
+                        <lightning-button 
+                            icon-name="utility:chevronleft" 
+                            variant="neutral" 
+                            onclick={handlePrevious}
+                            disabled={isFirstPage}>
+                        </lightning-button>
+                        <span class="slds-var-m-horizontal_medium">
+                            Page {currentPage} of {totalPages}
+                        </span>
+                        <lightning-button 
+                            icon-name="utility:chevronright" 
+                            variant="neutral" 
+                            onclick={handleNext}
+                            disabled={isLastPage}>
+                        </lightning-button>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

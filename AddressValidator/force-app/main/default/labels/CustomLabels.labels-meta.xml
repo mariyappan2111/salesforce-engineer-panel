@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>API_Provider_Name</fullName>
+        <categories>Address Validations</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>API Provider Name</shortDescription>
+        <value>Smarty</value>
+    </labels>
+    <labels>
+        <fullName>Default_Batch_Size</fullName>
+        <categories>Address Validations</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Default Batch Size</shortDescription>
+        <value>100</value>
+    </labels>
+    <labels>
+        <fullName>Default_Smarty_Address_End_point</fullName>
+        <categories>Address Validations</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Default Smarty Single Address End point</shortDescription>
+        <value>/street-address</value>
+    </labels>
+    <labels>
+        <fullName>Default_Smarty_Batch_Adress_Endpoint</fullName>
+        <categories>Address Validations</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Default Smarty Batch Adress Endpoint</shortDescription>
+        <value>/street-addresses</value>
+    </labels>
+    <labels>
+        <fullName>No_access_to_Contact_object</fullName>
+        <categories>Address Validations</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>No access to Contact object</shortDescription>
+        <value>No access to Contact object</value>
+    </labels>
+    <labels>
+        <fullName>No_active_address_validation_provider</fullName>
+        <categories>Address Validations</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>No active address validation provider</shortDescription>
+        <value>No active address validation provider configured.</value>
+    </labels>
+    <labels>
+        <fullName>No_contacts_found_with_provided_IDs</fullName>
+        <categories>Address Validations</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>No contacts found with provided IDs</shortDescription>
+        <value>No contacts found with provided IDs</value>
+    </labels>
+    <labels>
+        <fullName>No_contacts_have_valid_address_fields_to_validate</fullName>
+        <categories>Address Validations</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>No contacts have valid address fields to validate</shortDescription>
+        <value>No contacts have valid address fields to validate</value>
+    </labels>
+    <labels>
+        <fullName>No_record_Ids_provided</fullName>
+        <categories>Address Validations</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>No record Ids provided</shortDescription>
+        <value>No record Ids provided</value>
+    </labels>
+    <labels>
+        <fullName>Provider_class_not_found</fullName>
+        <categories>Address Validations</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Provider class not found</shortDescription>
+        <value>Provider class not found: {0}</value>
+    </labels>
+</CustomLabels>

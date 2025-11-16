@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Smarty API INT</label>
+    <protected>true</protected>
+    <values>
+        <field>API_Credential_Name__c</field>
+        <value xsi:type="xsd:string">Smarty_Cred_INT</value>
+    </values>
+    <values>
+        <field>API_End_Point_Url__c</field>
+        <value xsi:type="xsd:string">https://international-street.api.smarty.com</value>
+    </values>
+    <values>
+        <field>API_Service_End_Date__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>API_Service_Provider_Class__c</field>
+        <value xsi:type="xsd:string">SmartyAPIServiceProvider</value>
+    </values>
+    <values>
+        <field>API_Service_Start_Date__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Auth_ID__c</field>
+        <value xsi:type="xsd:string">5d5686ff-6bfb-f518-7d98-a993c7fe95d6</value>
+    </values>
+    <values>
+        <field>Auth_token__c</field>
+        <value xsi:type="xsd:string">EGuvaQc7J2Xt9Y8QLykI</value>
+    </values>
+    <values>
+        <field>Country__c</field>
+        <value xsi:type="xsd:string">Netherlands</value>
+    </values>
+    <values>
+        <field>Is_Active__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Name_of_the_Provider__c</field>
+        <value xsi:type="xsd:string">Smarty_INT</value>
+    </values>
+    <values>
+        <field>Service_Batch_Size__c</field>
+        <value xsi:type="xsd:double">100.0</value>
+    </values>
+    <values>
+        <field>Timeout_Threshold__c</field>
+        <value xsi:type="xsd:double">6000.0</value>
+    </values>
+</CustomMetadata>
