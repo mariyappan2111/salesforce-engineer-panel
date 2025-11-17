@@ -68,10 +68,9 @@ public class SmartyAPIServiceProvider implements IIntegrationsServiceProvider{
     }
 
     private String buildSingleAddressEndpoint(AddressWrapper address) {
-        //String endpoint = 'callout:' + apiConfiguration.API_Credential_Name__c + SINGLE_ADDRESS_ENDPOINT + '?';  // Base URL    
+        // String endpoint = 'callout:' + apiConfiguration.API_Credential_Name__c + SINGLE_ADDRESS_ENDPOINT + '?';  // Base URL    
         //this above line will be enabled when using named Crdentials with multiple providers 
         String endpoint =  apiConfiguration.API_End_Point_Url__c+SINGLE_ADDRESS_ENDPOINT + '?auth-id='+apiConfiguration.Auth_ID__c+'&auth-token='+apiConfiguration.Auth_token__c+'&';  // Base URL     
-       
         List<String> params = new List<String>();  // Add address parameters (URL encoded)
         if (String.isNotBlank(address.street)) {
             params.add('street=' + EncodingUtil.urlEncode(address.street, 'UTF-8'));

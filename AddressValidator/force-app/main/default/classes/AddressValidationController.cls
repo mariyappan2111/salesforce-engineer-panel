@@ -32,7 +32,6 @@ public with sharing class AddressValidationController {
                 contactMap.put(contact.Id, contact);
             }
         }
-        System.debug(contactMap);
         if (addressesToValidate.isEmpty()) {
                 responseCT.success = false;
                 responseCT.message = System.label.No_contacts_have_valid_address_fields_to_validate;
@@ -107,7 +106,7 @@ public with sharing class AddressValidationController {
                 return null;
             }
             Integer offset = (pageNumber - 1) * pageSize;
-            return [ SELECT Id, Name, MailingStreet, MailingCity, MailingState, MailingPostalCode, MailingCountry, AddressValid__c FROM Contact ORDER BY Name LIMIT :pageSize OFFSET :offset]; 
+            return [ SELECT Id, Name, MailingStreet, MailingCity, MailingState, MailingPostalCode, MailingCountry, AddressValid__c FROM Contact ORDER BY AddressValid__c DESC LIMIT :pageSize OFFSET :offset]; 
         } catch (Exception e) {
             throw new AuraHandledException(e.getMessage());
         }

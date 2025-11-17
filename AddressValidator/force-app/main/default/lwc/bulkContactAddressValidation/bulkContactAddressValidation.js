@@ -9,7 +9,7 @@ export default class BulkContactAddressValidation extends LightningElement {
     @track contactList = [];
     @track selectedIds = [];
     @track currentPage = 1;
-    @track pageSize = 6;
+    @track pageSize = 9;
     @track totalRecords = 0;
 
     connectedCallback() {

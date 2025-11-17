@@ -1,6 +1,5 @@
 public with sharing class AddressValidationProviderFT {
-    // Cache for Address Validation Provider Metadata
-    // This cache stores the metadata for each address validation provider
+    // This method stores the metadata for each address validation provider
     public static Map<String, API_Service_Providers__mdt> apiServicepProviderCache;
     public static IIntegrationsServiceProvider getServiceProvider(String countryName){
         if (apiServicepProviderCache == null) {
