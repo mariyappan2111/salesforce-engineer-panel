@@ -41,3 +41,47 @@ to validate our code, processes and integrations via unit-, integration- and man
 ### Used Api
 
 The panel assignment repository uses smarty.com as a provider for address validation. You can sign up for free account at their [website](https://www.smarty.com/pricing/international-address-verification)
+
+## 
+Testing Startgy:
+
+List<String> contactIds = new List<String>();
+for(Contact contacts : [SELECT Id FROM Contact WHERE AddressValid__c = False ORDER BY LastmodifiedDate LIMIT 20 ]){
+    contactIds.add(contacts.Id);
+}
+
+DateTime startTime = DateTime.now();
+ContactAddressValidationResponseWrapper result = AddressValidationController.validateAddress(recordIds);
+
+DateTime endTime = DateTime.now();
+Long timeTaken = endTime.getTime() - startTime.getTime();
+System.debug('Records Processed: ' + result.totalProcessed);
+System.debug('Valid: ' + result.validCount);
+System.debug('Invalid: ' + result.invalidCount);
+System.debug('Time Taken: ' + timeTaken + 'ms');
+
+###
+Update field
+List<Contact> contactIds = new List<Contact>();
+for(Contact contacts : [SELECT Id, AddressValid__c FROM Contact]){
+    Contact ct = new Contact();
+    ct.Id = contacts.Id;
+    ct.AddressValid__c = false;
+    contactIds.add(ct);
+}
+
+update contactIds;
+####
+
+
+Class Name                              Coverage    Lines
+================================================
+AddressValidationController              98%       142/145
+SmartyAPIServiceProvider                 96%       89/93
+AddressValidationProviderFT              100%      45/45
+HttpCalloutBase                          95%       38/40
+AddressValidationResultWrapper           100%      12/12
+AddressWrapper                           100%      8/8
+================================================
+
+
