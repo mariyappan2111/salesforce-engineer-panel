@@ -32,5 +32,10 @@
         <members>*</members>
         <name>RemoteSiteSetting</name>
     </types>
+    <types>
+        <members>Contact_List_Page</members>
+        <members>Contact_Record_Page</members>
+        <name>FlexiPage</name>
+    </types>
     <version>65.0</version>
 </Package>
