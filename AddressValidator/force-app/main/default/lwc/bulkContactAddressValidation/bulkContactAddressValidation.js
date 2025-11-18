@@ -47,6 +47,7 @@ export default class BulkContactAddressValidation extends LightningElement {
         validateAddressBulk({ recordIds: this.selectedIds })
             .then((result) => {
                 if (result) {
+                alert(JSON.stringify(result))
                     const resultMap = new Map(result.results.map(r => [r.contactId, r]));
                     this.contactList = this.contactList.map(contact => {
                         if (resultMap.has(contact.Id)) {
@@ -61,7 +62,7 @@ export default class BulkContactAddressValidation extends LightningElement {
                         return contact;
                     });
                     this.dispatchEvent(new RefreshEvent());
-                    this.showToast('Success', 'address(es) validated successfully', 'success');
+                    //this.showToast('Success', 'address(es) validated successfully', 'success');
                 } else {
                     this.showToast('Info', 'No records validated', 'info');
                 }

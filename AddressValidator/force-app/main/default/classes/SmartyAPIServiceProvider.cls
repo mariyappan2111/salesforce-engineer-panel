@@ -7,6 +7,16 @@ public class SmartyAPIServiceProvider implements IIntegrationsServiceProvider{
 
     public SmartyAPIServiceProvider() {
         this.apiConfiguration = AddressValidationProviderFT.getActiveProvider();
+
+        // Enable this section to maintain the custoservice for particular time
+        // can be worked start and End Date
+        // sample code
+        // if (apiConfiguration.Start_Date__c != null && apiConfiguration.End_Date__c != null) {
+        //     Date today = Date.today();
+        //     if (today < apiConfiguration.Start_Date__c || today > apiConfiguration.End_Date__c) {
+        //         throw new AuraHandledException('Provider configuration is not active for today.');
+        //     }
+        // }
     }
 
     public String getServiceProvider() {
@@ -20,7 +30,7 @@ public class SmartyAPIServiceProvider implements IIntegrationsServiceProvider{
         }
         Integer batchSize = apiConfiguration.Service_Batch_Size__c != null ? Integer.valueOf(apiConfiguration.Service_Batch_Size__c) : DEFAULT_BATCH_SIZE;
         
-        for (Integer i = 0; i < addresses.size(); i += batchSize) {
+        for (Integer i = 0; i < addresses.size(); i += batchSize) { // Set the batch size
             Integer endIndex = Math.min(i + batchSize, addresses.size());
             List<AddressWrapper> addressList = new List<AddressWrapper>();
             for (Integer j = i; j < endIndex; j++) {

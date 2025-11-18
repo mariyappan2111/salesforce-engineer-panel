@@ -3,7 +3,7 @@ public with sharing class AddressValidationController {
     @AuraEnabled
     public static ContactAddressValidationResponseWrapper validateAddress(List<String> recordIds) {
         ContactAddressValidationResponseWrapper responseCT = new ContactAddressValidationResponseWrapper();
-        if(recordIds == null && recordIds.isEmpty()){
+        if(recordIds == null || recordIds.isEmpty()){
             responseCT.message = System.Label.No_record_Ids_provided;
             responseCT.success = false;
             return responseCT;
@@ -30,6 +30,10 @@ public with sharing class AddressValidationController {
                 AddressWrapper address = new AddressWrapper(contact.Id, contact.MailingStreet,  contact.MailingCity, contact.MailingState, contact.MailingPostalCode, contact.MailingCountry, null, null, null, null, null);
                 addressesToValidate.add(address);
                 contactMap.put(contact.Id, contact);
+            }else{
+               responseCT.message = System.Label.No_access_to_Contact_object;
+                responseCT.success = false;
+                return responseCT;
             }
         }
         if (addressesToValidate.isEmpty()) {
@@ -96,7 +100,7 @@ public with sharing class AddressValidationController {
     }
 
     private static Boolean isValidContactAddress(Contact contact){
-        return (contact.MailingStreet != null && contact.MailingCity != null && contact.MailingState != null && contact.MailingPostalCode != null && contact.MailingCountry != null);
+        return (contact.MailingStreet != null || contact.MailingCity != null || contact.MailingState != null && contact.MailingPostalCode != null || contact.MailingCountry != null);
     }
 
     @AuraEnabled
