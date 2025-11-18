@@ -44,7 +44,7 @@ public class SmartyAPIServiceProvider implements IIntegrationsServiceProvider{
         }
         return results;
     }
-
+    // Call API Services for Single Address
     private List<AddressValidationResultWrapper> validateSingleAddress(AddressWrapper address) {
         try {
             String endpoint = buildSingleAddressEndpoint(address);
@@ -55,7 +55,7 @@ public class SmartyAPIServiceProvider implements IIntegrationsServiceProvider{
             return handleError(new List<AddressWrapper>{address}, e.getMessage());
         }
     }
-
+    // Call API Services for Bulk Address
     private List<AddressValidationResultWrapper> validateBulkAddress(List<AddressWrapper> bulkAddressList) {
         try {
             String endpoint = buildBulkAddressEndpoint();

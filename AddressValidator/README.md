@@ -60,7 +60,7 @@ System.debug('Valid: ' + result.validCount);
 System.debug('Invalid: ' + result.invalidCount);
 System.debug('Time Taken: ' + timeTaken + 'ms');
 
-###
+##
 Update field
 List<Contact> contactIds = new List<Contact>();
 for(Contact contacts : [SELECT Id, AddressValid__c FROM Contact]){
@@ -72,16 +72,5 @@ for(Contact contacts : [SELECT Id, AddressValid__c FROM Contact]){
 
 update contactIds;
 ####
-
-
-Class Name                              Coverage    Lines
-================================================
-AddressValidationController              98%       142/145
-SmartyAPIServiceProvider                 96%       89/93
-AddressValidationProviderFT              100%      45/45
-HttpCalloutBase                          95%       38/40
-AddressValidationResultWrapper           100%      12/12
-AddressWrapper                           100%      8/8
-================================================
 
 
