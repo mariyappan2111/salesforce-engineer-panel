@@ -30,10 +30,6 @@ public with sharing class AddressValidationController {
                 AddressWrapper address = new AddressWrapper(contact.Id, contact.MailingStreet,  contact.MailingCity, contact.MailingState, contact.MailingPostalCode, contact.MailingCountry, null, null, null, null, null);
                 addressesToValidate.add(address);
                 contactMap.put(contact.Id, contact);
-            }else{
-               responseCT.message = System.Label.No_access_to_Contact_object;
-                responseCT.success = false;
-                return responseCT;
             }
         }
         if (addressesToValidate.isEmpty()) {
